@@ -1,0 +1,25 @@
+Student:
+    type: object
+    config:
+        fields:
+            id:
+                type: 'Int!'
+            firstName:
+                type: 'String!'
+            lastName:
+                type: 'String!'
+            birthDate:
+                type: 'Date!'
+            marks:
+                type: '[Mark]'
+
+StudentInput:
+    type: input-object
+    config:
+        fields:
+            firstName:
+                type: 'String!'
+            lastName:
+                type: 'String!'
+            birthDate:
+                type: 'Date!'

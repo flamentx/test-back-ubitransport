@@ -1,0 +1,13 @@
+Date:
+    type: custom-scalar
+    config:
+        serialize: ["App\\Type\\DateType", "serialize"]
+        parseValue: ["App\\Type\\DateType", "parseValue"]
+        parseLiteral: ["App\\Type\\DateType", "parseLiteral"]
+
+DateTime:
+    type: custom-scalar
+    config:
+        serialize: ["App\\Type\\DateTimeType", "serialize"]
+        parseValue: ["App\\Type\\DateTimeType", "parseValue"]
+        parseLiteral: ["App\\Type\\DateTimeType", "parseLiteral"]

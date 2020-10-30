@@ -1,0 +1,51 @@
+MutationResponse:
+    type: object
+    config:
+        fields:
+            content:
+                type: String!
+            status:
+                type: String!
+
+Mutation:
+    type: object
+    config:
+        fields:
+
+            ##########################################
+            ################ STUDENT #################
+            ##########################################
+
+            newStudent:
+                type: Student
+                resolve: "@=mutation('newStudent', [args['input']])"
+                args:
+                    input:
+                        type: StudentInput!
+
+            updateStudent:
+                type: Student
+                resolve: "@=mutation('updateStudent', [args['studentId'], args['input']])"
+                args:
+                    studentId:
+                        type: 'Int!'
+                    input:
+                        type: StudentInput!
+
+            deleteStudent:
+                type: MutationResponse
+                resolve: "@=mutation('deleteStudent', [args['studentId']])"
+                args:
+                    studentId:
+                        type: 'Int!'
+
+            ##########################################
+            ################## MARK ##################
+            ##########################################
+
+            newMark:
+                type: Mark
+                resolve: "@=mutation('newMark', [args['input']])"
+                args:
+                    input:
+                        type: MarkInput!

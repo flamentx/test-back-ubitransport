@@ -1,0 +1,32 @@
+QueryResponse:
+    type: object
+    config:
+        fields:
+            content:
+                type: 'String'
+            status:
+                type: 'String'
+
+Query:
+    type: object
+    config:
+        fields:
+
+            ##########################################
+            ################## MARK ##################
+            ##########################################
+
+            GetAverageStudentMarks:
+                type: 'QueryResponse'
+                description: 'Get the average of a student`s marks'
+                args:
+                    studentId:
+                        description: 'id of the student entity'
+                        type: 'Int!'
+
+                resolve: "@=resolver('getAverageStudentMarks', [args['studentId']])"
+
+            GetAverageClassMarks:
+                type: 'QueryResponse'
+                description: 'Get the average of all the marks of a class of students'
+                resolve: "@=resolver('getAverageClassMarks')"

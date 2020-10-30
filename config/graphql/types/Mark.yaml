@@ -1,0 +1,25 @@
+Mark:
+    type: object
+    config:
+        fields:
+            id:
+                type: 'Int!'
+            value:
+                type: 'Float!'
+            subject:
+                type: 'String!'
+            student:
+                type: 'Student!'
+
+MarkInput:
+    type: input-object
+    config:
+        fields:
+            value:
+                type: 'Float!'
+                validation: # applying constraints to `value`
+                    - Range: { min: 0, max: 20 }
+            subject:
+                type: 'String!'
+            studentId:
+                type: 'Int!'
